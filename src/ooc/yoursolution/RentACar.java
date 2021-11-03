@@ -50,17 +50,21 @@ public class RentACar implements RentACarInterface {
 
     @Override
     public boolean checkAvailability(Month month, int day, Make make, int lengthOfRent) {
+        boolean isAvailable;
         for (CarInterface c : cars) {
             if (c.getMake() == make) {
+                isAvailable = true;
                 for (int i=day;i<=(day+lengthOfRent); i++) {
                     if (!c.isAvailable(month,day)) {
-                        return false;
+                        isAvailable = false;
                     }
                 }
-
+                if (isAvailable) {
+                    return true;
+                }
             }
         }
-        return true;
+        return false;
     }
 
     @Override
