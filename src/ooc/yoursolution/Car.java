@@ -14,6 +14,10 @@ public class Car implements CarInterface {
     private Map<Month, boolean[]> availability;
     private double dailyRate;
 
+    public Car(Make make,double dailyRate) {
+        this.make = make;
+        this.dailyRate = dailyRate;
+    }
 
     @Override
     public Map<Month, boolean[]> createAvailability() {

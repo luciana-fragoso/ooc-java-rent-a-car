@@ -49,7 +49,6 @@ public class Driver {
         RentACarInterface rentACar = bookingSystem.setupRentACar(in);
        List<Car> cars = new ArrayList<Car>();
 
-        rentACar.setName(in.readLine());
         // Get the name of the car rental
         System.out.println(rentACar.getName());
 
