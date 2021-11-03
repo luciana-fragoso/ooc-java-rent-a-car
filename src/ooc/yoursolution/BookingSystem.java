@@ -14,7 +14,7 @@ public class BookingSystem implements BookingSystemInterface {
     @Override
     public RentACarInterface setupRentACar(BufferedReader in) throws IOException {
 
-
+            int aux = 0;
             rentACar = new RentACar();
             rentACar.setName(in.readLine());
 
@@ -28,8 +28,10 @@ public class BookingSystem implements BookingSystemInterface {
                for (int i=0;i<numOfCars;i++) {
                    float dailyRate = Float.parseFloat(parts[1]);
                    String makeString = parts[0];
-                   Car c = new Car(Make.valueOf(makeString),dailyRate);
+                   Car c = new Car(aux,Make.valueOf(makeString),dailyRate);
+                   c.createAvailability();
                    cars.add(c);
+                   aux++;
                }
                 line = in.readLine();
             }

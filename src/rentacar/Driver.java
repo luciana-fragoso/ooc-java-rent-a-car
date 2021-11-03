@@ -47,7 +47,6 @@ public class Driver {
         String file = "amilcar_rentals.txt";
         BufferedReader in = new BufferedReader(new FileReader(file));
         RentACarInterface rentACar = bookingSystem.setupRentACar(in);
-       List<Car> cars = new ArrayList<Car>();
 
         // Get the name of the car rental
         System.out.println(rentACar.getName());
@@ -57,14 +56,19 @@ public class Driver {
         
         // Check if there is a BMW car available for 5 days from the 1st
         // of January
-        System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5)); 
+       System.out.println(rentACar.checkAvailability(Month.JANUARY, 1, Make.BMW, 5));
         
         // Get the id of the car available
-        System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
+     System.out.println(rentACar.getCarAvailable(Month.JANUARY, 1, Make.BMW, 5));
         
         // Try some bookings
+        System.out.println("---- Bookings ----");
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+        System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
+
+     System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.JANUARY, 1, Make.BMW, 5));
         System.out.println(rentACar.bookCar(Month.FEBRUARY, 3, Make.FIAT, 10));
