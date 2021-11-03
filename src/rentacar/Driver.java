@@ -12,11 +12,14 @@ import ooc.enums.Month;
 
 import ooc.yoursolution.BookingSystem;
 import ooc.yoursolution.BookingSystemInterface;
+import ooc.yoursolution.Car;
 import ooc.yoursolution.RentACarInterface;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 // INCLUDE HERE THE LINK TO THE GIT REPOSITORY AS A COMMENT!!!!
 
@@ -43,12 +46,13 @@ public class Driver {
 
         String file = "amilcar_rentals.txt";
         BufferedReader in = new BufferedReader(new FileReader(file));
-
         RentACarInterface rentACar = bookingSystem.setupRentACar(in);
+       List<Car> cars = new ArrayList<Car>();
 
+        rentACar.setName(in.readLine());
         // Get the name of the car rental
         System.out.println(rentACar.getName());
-        
+
         // Print the number of cars in the rent-a-car
         System.out.println(rentACar.getNumberOfCars());  
         

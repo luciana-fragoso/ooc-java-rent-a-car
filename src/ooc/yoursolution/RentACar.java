@@ -15,7 +15,15 @@ public class RentACar implements RentACarInterface {
         cars = new ArrayList<CarInterface>();
     }
 
+    public RentACar(List<CarInterface> cars) {
+        this.cars = cars;
+    }
     public RentACar(String name) {
+        this.name = name;
+    }
+
+    public RentACar(List<CarInterface> cars, String name) {
+        this.cars = cars;
         this.name = name;
     }
 
